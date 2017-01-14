@@ -1,0 +1,56 @@
+</div>
+</div>
+<script>
+    var loc = window.location.pathname;
+    var segments = loc.split('/');
+    var breadcrumbs = '';
+    var currentPath = '/';
+    for (var i = 0; i < segments.length; i++) {
+        if (segments[i] !== '') {
+            currentPath += segments[i] + '/';
+            breadcrumbs += '<a href="' + currentPath + '" class=\"breadcrumb\">' + window.unescape(segments[i]) + '<\/a>';
+        } else if (segments.length - 1 !== i) {
+            currentPath += '';
+            breadcrumbs += '&emsp;<a href="' + currentPath + '" class=\"breadcrumb\">Root<\/a>';
+        }
+    }
+    document.getElementById('breadcrumbs').innerHTML = breadcrumbs;
+</script>
+<script src="/fancyindex/js/history.js"></script>
+</main>
+</body>
+<footer class="page-footer">
+    <div class="divider"></div>
+    <!-- Copyright -->
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel deep-purple darken-4 hoverable">
+
+                <h6 class="center-align white-text">
+                    <script type="text/javascript">
+                      copyright=new Date();
+                      update=copyright.getFullYear();
+                      document.write("Copyright@ 2016 - "+ update);
+                    </script>
+                    Your name here.
+                  </h6>
+
+                <!-- If you like my theme, please dont delete these lines. -->
+                <h6 class="center-align white-text">
+                  Themed by
+                  <a href="//github.com/halyul">
+                    <div class="chip">
+                      <img src="/fancyindex/img/author.png" alt="Contact Person">
+                      Halyul
+                    </div>
+                </a>
+                  All rights reserved.
+                </h6>
+
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</html>
